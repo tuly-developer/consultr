@@ -13,7 +13,7 @@
 ```bash
   composer install
 ```
-Configure .env with database credentials and add the API key `API_SUPERHERORES_KEY="4c8f6b51d448a62f5a76621db9057b157ef1ff42b797b7cadfe4ba0f47030f95"` them run
+Configure .env with database credentials and add the API key `API_SUPERHEROES_KEY="4c8f6b51d448a62f5a76621db9057b157ef1ff42b797b7cadfe4ba0f47030f95"` them run
 
 ```bash
   php artisan key:generate
