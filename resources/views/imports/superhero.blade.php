@@ -16,7 +16,7 @@
             <div class="card-body">
                 <form action="/import/superheroes" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="file" class="form-control">
+                    <input type="file" name="file" class="form-control"  accept = '.csv'>
                     <br>
                     <button id="import" class="btn btn-success">Import</button>
                 </form>
@@ -25,7 +25,7 @@
             <div class="card-body">
                 <form action="/import/superheroes/laravel-excel" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="file" class="form-control">
+                    <input type="file" name="file" class="form-control" accept = '.csv, .xlsx'>
                     <br>
                     <button id="importLibrary" class="btn btn-success">Import with library (excel supported)</button>
                 </form>
