@@ -9,6 +9,7 @@ use App\Publisher;
 use App\Superhero;
 use App\RequestLog;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use App\Imports\SuperheroesImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Redirect;
@@ -21,7 +22,7 @@ class ImportController extends Controller
     }
 
     //Import
-    public function superheroesImport()
+    public function superheroesImport(Request $request)
     {
         try {
 
@@ -80,7 +81,6 @@ class ImportController extends Controller
 
         }catch (\Exception $e) {
             $requestLog = RequestLog::create([
-                'payload' => json_encode($data),
                 'error' => 'Error: ' . $e->getCode() . ' - ' . $e->getMessage() . ' in ' . $e->getFile() . ' on line ' . $e->getLine()
             ]);
             
@@ -102,7 +102,6 @@ class ImportController extends Controller
         }catch (\Exception $e) {
 
             $requestLog = RequestLog::create([
-                'payload' => json_encode($data),
                 'error' => 'Error: ' . $e->getCode() . ' - ' . $e->getMessage() . ' in ' . $e->getFile() . ' on line ' . $e->getLine()
             ]);
             
