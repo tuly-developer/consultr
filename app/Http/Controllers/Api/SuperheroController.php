@@ -10,7 +10,7 @@ use App\Http\Requests\SuperheroRequest;
 class SuperheroController extends Controller
 {
 
-    public function list($id = null)
+    public function list(Request $request, $id = null)
     {
         if($request->header('api-superheroes-key') == env('API_SUPERHEROES_KEY')){
             return $id ? Superhero::with('race', 'eyeColor', 'hairColor', 'publisher')->findOrFail($id) : Superhero::all();
