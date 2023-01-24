@@ -29,7 +29,7 @@ Configure .env with database credentials and add the API key `API_SUPERHEROES_KE
 
 
 ## API routes
-API_SUPERHERORES_KEY required in request header
+api-superheroes-key required in request header
 
 #### Get one/all superheroes
 
